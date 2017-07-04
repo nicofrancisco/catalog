@@ -1,0 +1,319 @@
+/* LAYOUT *//* --------- */
+html {
+
+  font-size: 80% !important;
+
+}
+body{
+    margin:40px;
+}
+
+section {
+    padding: 20px;
+    max-width: 1200px;
+}
+
+ul {
+    list-style:none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin: 0 3% 20px 0;
+}
+
+li h2 {
+    background: #525460;
+    color: #fff;
+    padding-bottom: 10px;
+    margin: 0 0 20px 0;
+    padding: 14px;
+    font-size: 1.8em;
+}
+li p{
+    padding: 0 20px;
+    font-size: 1.2em;
+}
+button {
+    font-size: 1.2em;
+    clear: both;
+}
+button.btn:hover {
+    background: #525460;
+    color: #fff;
+}
+
+.btn{
+  display: inline-block;
+  margin: 0 3% 20px 0;
+  float: left;
+
+}
+.controls {
+    padding: 12px 0;
+    /*font-size: 1.2em;*/
+}
+.checkbox {
+    float: left;
+    margin-top:10px !important;
+    height: 30px;
+    width: 130px;
+}
+.clear{
+    clear: both;
+}
+
+
+.col-sm-3{
+
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+
+/* ITEM RENDERER *//* --------- */
+
+
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
+.col-item
+{
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+    background: #FFF;
+    margin-right: 18px;
+    margin-bottom: 18px;
+}
+.col-item .photo img
+{
+    margin: 0 auto;
+    width: 100%;
+}
+
+.col-item .info
+{
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+    margin-top: 1px;
+}
+
+.col-item:hover .info {
+    background-color: #F5F5DC;
+}
+.col-item .price
+{
+    /*width: 50%;*/
+    float: left;
+    margin-top: 5px;
+}
+
+.col-item .price h5
+{
+    line-height: 20px;
+    margin: 0;
+}
+
+.price-text-color
+{
+    color: #219FD1;
+}
+
+.col-item .info .rating
+{
+    color: #777;
+}
+
+.col-item .rating
+{
+    /*width: 50%;*/
+    float: left;
+    font-size: 17px;
+    text-align: right;
+    line-height: 52px;
+    margin-bottom: 10px;
+    height: 52px;
+}
+
+.col-item .separator
+{
+    border-top: 1px solid #E1E1E1;
+}
+
+.clear-left
+{
+    clear: left;
+}
+
+.col-item .separator p
+{
+    line-height: 20px;
+    margin-bottom: 0;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.col-item .separator p i
+{
+    margin-right: 5px;
+}
+.col-item .btn-add
+{
+    width: 50%;
+    float: left;
+}
+
+.col-item .btn-add
+{
+    border-right: 1px solid #E1E1E1;
+}
+
+.col-item .btn-details
+{
+    width: 50%;
+    float: left;
+    padding-left: 10px;
+}
+.controls
+{
+    margin-top: 20px;
+}
+[data-slide="prev"]
+{
+    margin-right: 10px;
+}
+
+
+/* SALE & NEW *//* ---------- */
+
+
+span.tag2 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 36px;
+    border-radius: 50%;
+    padding: 10px 0;
+    color: #fff;
+    font-size: 11px;
+    text-align: center
+}
+span.hot {
+    background-color: rgb(43, 83, 52);
+}
+
+span.sale {
+    background-color: #a90329;
+}
+
+
+/* RATING STARS *//* ----------- */
+
+
+.star-ratings-css {
+  unicode-bidi: bidi-override;
+  color: #c5c5c5;
+  font-size: 19px;
+  height: 25px;
+  width: 100px;
+  margin: 0;
+  position: relative;
+  text-shadow: 0 1px 0 #a2a2a2;
+}
+.star-ratings-css::before {
+  content: '★★★★★';
+  opacity: .3;
+}
+
+[title="0"]::after {
+  width: 0%;
+}
+[title="1"]::after {
+  width: 16%;
+}
+[title="2"]::after {
+  width: 36%;
+}
+[title="3"]::after {
+  width: 57%;
+}
+[title="4"]::after {
+  width: 77%;
+}
+[title="5"]::after {
+  width: 100%;
+}
+
+.star-ratings-css::after {
+  color: black;
+  content: '★★★★★';
+  text-shadow: 0 1px 0 #ab5414;
+  position: absolute;
+  z-index: 1;
+  display: block;
+  left: 0;
+  top:0;
+  /*width: attr(rating);*/
+  overflow: hidden;
+}
+
+/* COLOR BULLETS--- */
+
+span.color-map {
+    float: left;
+    margin-left: 5px;
+    top: 10px;
+    left: 5px;
+    width: 16px;
+    height: 5px;
+    border-radius: 50%;
+    padding: 8px 0;
+    color: #ccc;
+    font-size: 14px;
+
+}
+
+.color-group{
+  margin-left: -5px;
+  margin-top: 3px;
+}
+
+/* Materialize*/
+
+.caret {
+  border-color: transparent !important;
+  left: 270px;
+  display: block;
+}
+
+input{
+
+  width: 25% !important;
+}
+
+nav ul li a:hover{
+
+  text-decoration: none !important;
+  color: rgb(242, 224, 237);
+}
+
+nav a {left: 30px;}
+
+nav a:hover {
+  text-decoration: none !important;
+  color: rgb(242, 224, 237);
+}
+
+nav .nav-wrapper ul {right: 300px !important;}
+
+#nav-mobile {
+  width: 300px;
+}
+
+[type="checkbox"].filled-in:checked + label:after {
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f26863 !important;
+    background-color: #f26863 !important;
+    z-index: 0;
+  }

@@ -1,0 +1,19 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap-rating-input": "^0.4.0",
+    "express": "^4.15.3",
+    "firebase-tools": "^3.9.1",
+    "nodemon": "^1.11.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}

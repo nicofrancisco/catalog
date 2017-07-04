@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Angular Listing App Gorilla</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+    <link href="css/styles.css" rel="stylesheet" media="screen" />
+    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+
+
+</head>
+<body data-ng-app="listingApp">
+    <section class="container" data-ng-controller="listingCtrl">
+      <nav>
+        <div class="page-header nav-wrapper">
+            <a href="#" class="brand-logo">{{title}}</a>
+            <!--<ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="sass.html">Sass</a></li>
+              <li><a href="badges.html">Components</a></li>
+              <li><a href="collapsible.html">JavaScript</a></li>
+            </ul>-->
+
+        </div>
+      </nav>
+      <br>
+        <div >
+            <input type="text" data-ng-model="filters.query" placeholder="enter product name" />
+            <!-- <label for="sortBy">Sort by</label> WATCH WORKING FINE WITHOUT MATERIALIZE CLASS...-->
+            <div class="input-field col s12">
+             <select id="sortBy" data-ng-model="descending" my-material-select><!--DIRECTIVE my-material-select CLASS class="browser-default"-->
+                <option value="false">Lower price first</option>
+                <option value="true" ng-selected="true">Higher price first</option>
+            </select>
+          </div>
+
+            <div class="clear">
+                <div data-ng-repeat="tag in filters.tags" class="checkbox">
+                    <input id="{{tag.label}}" class="filled-in" type="checkbox" data-ng-model="tag.selected" />
+                    <label for="{{tag.label}}">{{tag.label}}</label>
+                </div>
+            </div>
+        </div>
+
+        <p class="clear card-panel blue-grey lighten-2 white-text">{{filtered.length}} catalog of {{catalogs.length}} match your search.</p>
+        <ul class="clear">
+            <li data-ng-repeat="catalog in filtered = (catalogs | catalogFilter: filters) | orderBy:'price.regular':descending | limitTo: viewLimit">
+
+                <!--<p>{{catalog.pubDate | date:'dd/MM/yy'}}</p>-->
+                <div class="col-sm-3">
+                            <div class="col-item">
+                                <div class="photo">
+                                    <img ng-src={{catalog.img}} class="img-responsive" alt="a" />
+                                    <span ng-if='catalog.ribbon' contextmenu="" class="tag2 hot" ng-class="{sale: catalog.ribbon == 'SALE'}">
+                        							{{catalog.ribbon}}
+                        						</span>
+                                </div>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="price col-md-12">
+                                            <h5>{{catalog.name}}  </h5>
+                                            <div class="star-ratings-css" title="{{catalog.rating}}"></div>
+                                            <h5 class="price-text-color">
+                                                ${{catalog.price.regular}}</h5>
+                                          <small>{{catalog.description}}</small>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="color-group" data-ng-repeat="color in catalog.colors">
+                                        <span style="background-color: {{color.code}};" class="color-map"></span>
+
+                                    </div>
+
+                                    <div class="clearfix">
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+            </li>
+        </ul>
+
+        <button class="btn-primary" data-ng-click="viewMore(4)" data-ng-hide="viewLimit >= filtered.length">Show more</button>
+    </section>
+    <section data-ng-controller="testCtrl">
+        <h2>{{dataFromRoot}}</h2>
+    </section>
+    <!--<scripts & rel-->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"</script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>-->
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="scripts/js/materialize.js"></script>
+    <script src="scripts/services/listingServices.js"></script>
+    <script src="scripts/filters/listingFilters.js"></script>
+    <script src="scripts/modules/listing.js"></script>
+    <script src="scripts/myApp.js"></script>
+    <script>
+
+      function initializeMaterialize() {
+          // initialize materialize slider
+          //$(this).material_select('destroy');
+          console.log("times");
+          $('select').material_select();
+
+          $('#sortBy').on('change', function(e){
+
+
+                /*$('select').material_select();
+
+                console.log($(this)[0].value);
+
+                 $(this).val($(this)[0].value);
+                 $(this).material_select();
+
+                Materialize.updateTextFields();*/
+
+          });
+
+
+
+
+
+              $(this).on('contentChanged', function() {
+                // re-initialize (update)
+                //console.log(this);
+                //$('select').material_select();
+                //Materialize.updateTextFields();
+              });
+            //$(this)[0].value = false;
+            //console.log(this["data-ng-model"]);
+            //this["data-ng-model"].val(false);
+            //$(this).material_select();
+
+          // initialize materialize select
+
+      }
+
+
+      $(window).load(function() {
+        initializeMaterialize();
+      });
+    </script>
+
+</body>
+</html>
